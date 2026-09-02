@@ -1,0 +1,302 @@
+/* =================================
+   404
+================================= */
+
+.not-found {
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    40px 20px
+    calc(40px + env(safe-area-inset-bottom));
+
+  background:
+    radial-gradient(
+      circle at center,
+      #ffffff,
+      #f6e9ee
+    );
+
+  color: #432b37;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+
+/* =================================
+   DECORACIÓN
+================================= */
+
+.not-found::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border: 1px solid rgba(185, 154, 104, .15);
+
+  border-radius: 50%;
+}
+
+.not-found::after {
+  content: "";
+
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  border: 1px solid rgba(185, 154, 104, .08);
+
+  border-radius: 50%;
+}
+
+
+/* =================================
+   CONTENIDO
+================================= */
+
+.not-found-contenido {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  max-width: 600px;
+
+  animation: aparecer404 1s ease;
+}
+
+
+/* =================================
+   ORNAMENTO
+================================= */
+
+.not-found-ornamento {
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: #b99a68;
+
+  font-size: 25px;
+}
+
+.not-found-eyebrow {
+  margin: 0 0 15px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 5px;
+
+  color: #b99a68;
+}
+
+
+/* =================================
+   404
+================================= */
+
+.not-found h1 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(120px, 25vw, 220px);
+
+  font-weight: 300;
+
+  line-height: .75;
+
+  color: #432b37;
+}
+
+
+/* =================================
+   LÍNEA
+================================= */
+
+.not-found-linea {
+  width: 80px;
+
+  height: 1px;
+
+  margin: 35px auto;
+
+  background: #b99a68;
+}
+
+
+/* =================================
+   TEXTOS
+================================= */
+
+.not-found h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(35px, 7vw, 55px);
+
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+.not-found-mensaje {
+  max-width: 450px;
+
+  margin: 25px auto 35px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 21px;
+
+  line-height: 1.6;
+
+  color: #432b37;
+
+  opacity: .8;
+}
+
+
+/* =================================
+   BOTÓN
+================================= */
+
+.not-found-boton {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+
+  padding: 15px 30px;
+
+  border: 1px solid #432b37;
+
+  border-radius: 50px;
+
+  color: #432b37;
+
+  text-decoration: none;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  transition: .4s ease;
+}
+
+.not-found-boton:hover {
+  background: #432b37;
+
+  color: white;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 30px rgba(67, 43, 55, .2);
+}
+
+
+/* =================================
+   ANIMACIÓN
+================================= */
+
+@keyframes aparecer404 {
+
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =================================
+   CELULAR
+================================= */
+
+@media (max-width: 700px) {
+
+  .not-found {
+    padding:
+      30px 20px
+      calc(30px + env(safe-area-inset-bottom));
+  }
+
+  .not-found h1 {
+    font-size: 140px;
+  }
+
+  .not-found-mensaje {
+    font-size: 19px;
+  }
+
+  .not-found::before {
+    width: 350px;
+    height: 350px;
+  }
+
+  .not-found::after {
+    width: 500px;
+    height: 500px;
+  }
+
+}
+
+
+/* =================================
+   375px
+================================= */
+
+@media (max-width: 375px) {
+
+  .not-found {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .not-found h1 {
+    font-size: 120px;
+  }
+
+  .not-found-eyebrow {
+    font-size: 8px;
+    letter-spacing: 3px;
+  }
+
+  .not-found-mensaje {
+    font-size: 18px;
+  }
+
+  .not-found-boton {
+    width: min(90%, 280px);
+
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+}

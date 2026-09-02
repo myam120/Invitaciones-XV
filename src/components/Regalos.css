@@ -1,0 +1,108 @@
+/* =================================
+   REGALOS
+================================= */
+
+.regalos {
+  background: var(--color-principal-claro);
+}
+
+.regalo-icono {
+  font-size: 35px;
+
+  color: var(--color-acento);
+}
+
+.regalos p:not(.eyebrow) {
+  width: 100%;
+  max-width: 550px;
+
+  margin: 25px auto;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 22px;
+
+  line-height: 1.6;
+}
+
+.boton-regalos {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+
+  margin-top: 20px;
+
+  padding: 20px 40px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  background: var(--color-oscuro);
+
+  color: white;
+
+  text-decoration: none;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  transition: .3s;
+
+  touch-action: manipulation;
+}
+
+.boton-regalos:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 25px rgba(67, 43, 55, .2);
+}
+
+
+/* =================================
+   CELULAR
+================================= */
+
+@media (max-width: 700px) {
+
+  .regalos p:not(.eyebrow) {
+    max-width: 360px;
+
+    font-size: 20px;
+
+    line-height: 1.55;
+  }
+
+  .boton-regalos {
+    width: min(75%, 300px);
+
+    padding: 14px 20px;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    text-align: center;
+  }
+
+}
+
+
+/* =================================
+   375px
+================================= */
+
+@media (max-width: 375px) {
+
+  .regalos p:not(.eyebrow) {
+    font-size: 19px;
+  }
+
+}

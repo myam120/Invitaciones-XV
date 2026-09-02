@@ -1,0 +1,84 @@
+/* =================================
+   FAMILIA
+================================= */
+
+.familia {
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, .9),
+      rgba(255, 255, 255, .9)
+    ),
+    var(--fondo-familia) center / cover;
+}
+
+.nombres {
+  margin: 40px auto;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 30px;
+
+  line-height: 1.4;
+}
+
+.nombres span {
+  display: block;
+
+  margin-bottom: 15px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  color: var(--color-acento);
+}
+
+.separador-familia {
+  color: var(--color-acento);
+
+  font-size: 25px;
+}
+
+
+/* =================================
+   CELULAR
+================================= */
+
+@media (max-width: 700px) {
+
+  .nombres {
+    margin: 30px auto;
+
+    font-size: 26px;
+
+    line-height: 1.35;
+  }
+
+  .nombres span {
+    margin-bottom: 10px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+  }
+
+  .separador-familia {
+    font-size: 22px;
+  }
+
+}
+
+
+/* =================================
+   375px
+================================= */
+
+@media (max-width: 375px) {
+
+  .nombres {
+    font-size: 24px;
+  }
+
+}

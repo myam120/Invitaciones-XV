@@ -1,0 +1,341 @@
+/* =================================
+   REPRODUCTOR DE MÚSICA
+================================= */
+
+.reproductor-musica {
+  position: fixed;
+
+  right: 25px;
+  bottom: calc(25px + env(safe-area-inset-bottom));
+
+  z-index: 500;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  min-width: 260px;
+
+  padding: 12px 15px;
+
+  border: 1px solid rgba(255, 255, 255, .4);
+
+  border-radius: 50px;
+
+  background: color-mix(
+    in srgb,
+    var(--color-oscuro) 90%,
+    transparent
+  );
+
+  color: white;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, .15);
+
+  backdrop-filter: blur(12px);
+
+  overflow: hidden;
+}
+
+
+/* =================================
+   INFORMACIÓN
+================================= */
+
+.musica-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+/* =================================
+   VINILO
+================================= */
+
+.vinilo {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #222;
+
+  border: 2px solid var(--color-acento);
+
+  font-size: 17px;
+
+  transition: .5s ease;
+}
+
+.reproductor-musica.activo .vinilo {
+  animation: girarVinilo 4s linear infinite;
+}
+
+
+/* =================================
+   TEXTO
+================================= */
+
+.musica-texto {
+  display: flex;
+
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.musica-label {
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 7px;
+
+  letter-spacing: 2px;
+
+  color: var(--color-acento);
+}
+
+.musica-texto strong {
+  max-width: 130px;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 15px;
+
+  font-weight: 400;
+}
+
+
+/* =================================
+   ONDAS
+================================= */
+
+.ondas {
+  display: flex;
+
+  align-items: center;
+
+  gap: 2px;
+
+  height: 8px;
+
+  margin-top: 3px;
+}
+
+.ondas i {
+  width: 2px;
+  height: 5px;
+
+  background: var(--color-acento);
+
+  border-radius: 5px;
+}
+
+.reproductor-musica.activo .ondas i {
+  animation: onda .8s ease-in-out infinite alternate;
+}
+
+.ondas i:nth-child(1) {
+  animation-delay: .1s;
+}
+
+.ondas i:nth-child(2) {
+  animation-delay: .2s;
+}
+
+.ondas i:nth-child(3) {
+  animation-delay: .3s;
+}
+
+.ondas i:nth-child(4) {
+  animation-delay: .2s;
+}
+
+.ondas i:nth-child(5) {
+  animation-delay: .1s;
+}
+
+
+/* =================================
+   BOTÓN
+================================= */
+
+.boton-musica {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid var(--color-acento);
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 12px;
+
+  transition: .3s ease;
+
+  touch-action: manipulation;
+}
+
+.boton-musica:hover {
+  background: var(--color-acento);
+
+  transform: scale(1.05);
+}
+
+
+/* =================================
+   PROGRESO
+================================= */
+
+.progreso-musica {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  height: 2px;
+
+  background: var(--color-acento);
+
+  transition: width .2s linear;
+}
+
+
+/* =================================
+   ANIMACIONES
+================================= */
+
+@keyframes girarVinilo {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+@keyframes onda {
+
+  from {
+    height: 3px;
+  }
+
+  to {
+    height: 8px;
+  }
+
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 768px) {
+
+  .reproductor-musica {
+    right: 15px;
+
+    min-width: 0;
+
+    max-width: calc(100vw - 30px);
+
+    padding: 10px 12px;
+  }
+
+}
+
+
+/* =================================
+   CELULAR
+================================= */
+
+@media (max-width: 700px) {
+
+  .reproductor-musica {
+    right: 15px;
+
+    bottom: calc(15px + env(safe-area-inset-bottom));
+
+    max-width: calc(100vw - 30px);
+
+    padding: 10px 12px;
+
+    gap: 10px;
+  }
+
+  .musica-texto strong {
+    max-width: 100px;
+  }
+
+}
+
+
+/* =================================
+   375px
+================================= */
+
+@media (max-width: 375px) {
+
+  .reproductor-musica {
+    right: 10px;
+
+    max-width: calc(100vw - 20px);
+
+    padding: 8px 10px;
+  }
+
+  .vinilo {
+    width: 34px;
+    height: 34px;
+
+    font-size: 15px;
+  }
+
+  .boton-musica {
+    width: 36px;
+    height: 36px;
+  }
+
+  .musica-texto strong {
+    max-width: 80px;
+
+    font-size: 14px;
+  }
+
+}

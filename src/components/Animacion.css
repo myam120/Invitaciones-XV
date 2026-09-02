@@ -1,0 +1,184 @@
+/* =================================
+   SISTEMA DE ANIMACIONES
+================================= */
+
+.animacion {
+
+  --retraso: 0ms;
+  --duracion: 800ms;
+  --distancia: 50px;
+
+  opacity: 0;
+
+  transition:
+    opacity var(--duracion) cubic-bezier(.22, 1, .36, 1),
+    transform var(--duracion) cubic-bezier(.22, 1, .36, 1);
+
+  transition-delay: var(--retraso);
+
+}
+
+
+/* =================================
+   FADE UP
+================================= */
+
+.animacion-fade-up {
+
+  transform: translateY(var(--distancia));
+
+}
+
+.animacion-fade-up.animacion-visible {
+
+  opacity: 1;
+  transform: translateY(0);
+
+}
+
+
+/* =================================
+   FADE DOWN
+================================= */
+
+.animacion-fade-down {
+
+  transform: translateY(calc(var(--distancia) * -1));
+
+}
+
+.animacion-fade-down.animacion-visible {
+
+  opacity: 1;
+  transform: translateY(0);
+
+}
+
+
+/* =================================
+   FADE LEFT
+================================= */
+
+.animacion-fade-left {
+
+  transform: translateX(calc(var(--distancia) * -1));
+
+}
+
+.animacion-fade-left.animacion-visible {
+
+  opacity: 1;
+  transform: translateX(0);
+
+}
+
+
+/* =================================
+   FADE RIGHT
+================================= */
+
+.animacion-fade-right {
+
+  transform: translateX(var(--distancia));
+
+}
+
+.animacion-fade-right.animacion-visible {
+
+  opacity: 1;
+  transform: translateX(0);
+
+}
+
+
+/* =================================
+   ZOOM
+================================= */
+
+.animacion-zoom {
+
+  transform: scale(.90);
+
+}
+
+.animacion-zoom.animacion-visible {
+
+  opacity: 1;
+
+  transform: scale(1);
+
+}
+
+
+/* =================================
+   FADE SUAVE
+================================= */
+
+.animacion-fade {
+
+  transform: none;
+
+}
+
+.animacion-fade.animacion-visible {
+
+  opacity: 1;
+
+}
+
+
+/* =================================
+   ZOOM SUAVE
+================================= */
+
+.animacion-zoom-suave {
+
+  transform: scale(.96);
+
+}
+
+.animacion-zoom-suave.animacion-visible {
+
+  opacity: 1;
+  transform: scale(1);
+
+}
+
+
+/* =================================
+   REDUCIR MOVIMIENTO
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .animacion {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* =================================
+   MÓVIL
+================================= */
+
+@media (max-width: 700px) {
+
+  .animacion {
+    --distancia: 30px;
+  }
+
+}
+
+
+/* =================================
+   MÓVIL PEQUEÑO
+================================= */
+
+@media (max-width: 375px) {
+
+  .animacion {
+    --distancia: 20px;
+  }
+
+}

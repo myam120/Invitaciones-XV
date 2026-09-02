@@ -1,0 +1,96 @@
+/* =================================
+   MENSAJE
+================================= */
+
+.mensaje {
+  width: 100%;
+  max-width: 650px;
+  margin: auto;
+}
+
+.decoracion {
+  margin: 25px 0;
+
+  color: var(--color-principal);
+
+  font-size: 25px;
+}
+
+.texto-elegante {
+  width: 100%;
+  max-width: 650px;
+
+  margin: auto;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 25px;
+
+  line-height: 1.7;
+}
+
+.firma {
+  margin-top: 40px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 20px;
+}
+
+.firma strong {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+
+/* =================================
+   CELULAR
+================================= */
+
+@media (max-width: 700px) {
+
+  .texto-elegante {
+    max-width: 500px;
+
+    font-size: 20px;
+
+    line-height: 1.6;
+  }
+
+  .decoracion {
+    margin: 20px 0;
+
+    font-size: 20px;
+  }
+
+  .firma {
+    margin-top: 30px;
+  }
+
+  .firma strong {
+    font-size: 28px;
+  }
+
+}
+
+
+/* =================================
+   375px
+================================= */
+
+@media (max-width: 375px) {
+
+  .texto-elegante {
+    font-size: 19px;
+    line-height: 1.55;
+  }
+
+  .firma {
+    font-size: 18px;
+  }
+
+  .firma strong {
+    font-size: 26px;
+  }
+
+}

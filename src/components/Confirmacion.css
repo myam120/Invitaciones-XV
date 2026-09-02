@@ -1,0 +1,110 @@
+/* =================================
+   CONFIRMACIÓN
+================================= */
+
+.confirmacion {
+  background: var(--color-blanco);
+}
+
+.descripcion-confirmacion {
+  width: 100%;
+  max-width: 450px;
+
+  margin: 25px auto;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 22px;
+
+  line-height: 1.5;
+}
+
+.boton-whatsapp {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+
+  margin-top: 20px;
+
+  padding: 20px 40px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  background: var(--color-oscuro);
+
+  color: white;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  transition: .3s;
+
+  touch-action: manipulation;
+}
+
+.boton-whatsapp:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, .2);
+}
+
+
+/* =================================
+   CELULAR
+================================= */
+
+@media (max-width: 500px) {
+
+  .descripcion-confirmacion {
+    max-width: 340px;
+
+    font-size: 20px;
+
+    line-height: 1.5;
+  }
+
+  .boton-whatsapp {
+    width: min(75%, 320px);
+
+    padding: 15px 20px;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    text-align: center;
+  }
+
+}
+
+
+/* =================================
+   375px
+================================= */
+
+@media (max-width: 375px) {
+
+  .descripcion-confirmacion {
+    font-size: 19px;
+  }
+
+  .boton-whatsapp {
+    width: 75%;
+
+    font-size: 8.5px;
+
+    letter-spacing: 1px;
+  }
+
+}

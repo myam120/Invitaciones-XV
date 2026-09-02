@@ -1,0 +1,304 @@
+/* =================================
+   CUENTA REGRESIVA
+================================= */
+
+.countdown {
+  position: relative;
+
+  min-height: 500px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      color-mix(in srgb, var(--color-principal) 90%, transparent),
+      color-mix(in srgb, var(--color-oscuro) 92%, transparent)
+    ),
+    var(--fondo-countdown) center / cover;
+
+  color: var(--color-blanco);
+
+  overflow: hidden;
+}
+
+.countdown::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border: 1px solid rgba(232, 205, 151, 0.15);
+
+  border-radius: 50%;
+}
+
+.countdown::after {
+  content: "";
+
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  border: 1px solid rgba(226, 197, 139, 0.08);
+
+  border-radius: 50%;
+}
+
+.countdown > * {
+  position: relative;
+  z-index: 2;
+}
+
+.countdown h2 {
+  margin-top: 10px;
+
+  font-size: clamp(45px, 8vw, 70px);
+}
+
+.countdown .eyebrow {
+  color: var(--color-acento);
+}
+
+
+/* =================================
+   CONTADOR
+================================= */
+
+.contador {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: min(800px, 100%);
+
+  margin: 55px auto 0;
+}
+
+.contador > .animacion > div {
+  position: relative;
+
+  min-width: 145px;
+
+  padding: 0 30px;
+
+  text-align: center;
+}
+
+.contador > .animacion:not(:last-child) > div::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  top: 50%;
+
+  width: 1px;
+  height: 55px;
+
+  transform: translateY(-50%);
+
+  background:
+    linear-gradient(
+      transparent,
+      color-mix(
+        in srgb,
+        var(--color-acento) 50%,
+        transparent
+      ),
+      transparent
+    );
+}
+
+
+/* =================================
+   NÚMEROS
+================================= */
+
+.contador strong {
+  display: block;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(55px, 9vw, 90px);
+
+  font-weight: 300;
+
+  line-height: .8;
+
+  letter-spacing: -2px;
+
+  color: #fff;
+
+  text-shadow:
+    0 5px 25px rgba(0, 0, 0, .2);
+
+  font-variant-numeric: tabular-nums;
+}
+
+.contador span {
+  display: block;
+
+  margin-top: 18px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 4px;
+
+  color: var(--color-acento);
+}
+
+
+/* =================================
+   ANIMACIÓN NÚMERO
+================================= */
+
+.numero-cambio {
+  animation: cambioNumero .35s ease;
+}
+
+@keyframes cambioNumero {
+
+  0% {
+    opacity: .3;
+    transform: translateY(-8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 768px) {
+
+  .contador {
+    width: 100%;
+  }
+
+  .contador > .animacion > div {
+    min-width: 0;
+
+    flex: 1;
+
+    padding: 0 12px;
+  }
+
+}
+
+
+/* =================================
+   CELULAR
+================================= */
+
+@media (max-width: 700px) {
+
+  .countdown {
+    min-height: 450px;
+  }
+
+  .contador {
+    width: 100%;
+
+    margin-top: 40px;
+  }
+
+  .contador > .animacion > div {
+    padding: 0 20px;
+  }
+
+  .contador > .animacion:not(:last-child) > div::after {
+    height: 40px;
+  }
+
+  .contador strong {
+    font-size: clamp(38px, 12vw, 58px);
+
+    letter-spacing: -1px;
+  }
+
+  .contador span {
+    margin-top: 12px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+  }
+
+}
+
+
+/* =================================
+   390px
+================================= */
+
+@media (max-width: 390px) {
+
+  .contador > .animacion > div {
+    padding: 0 20px;
+  }
+
+  .contador strong {
+    font-size: 38px;
+  }
+
+  .contador span {
+    font-size: 7px;
+    letter-spacing: 1.5px;
+  }
+
+}
+
+
+/* =================================
+   375px
+================================= */
+
+@media (max-width: 375px) {
+
+  .countdown {
+    min-height: 420px;
+  }
+
+  .contador {
+    margin-top: 35px;
+  }
+
+  .contador strong {
+    font-size: 36px;
+  }
+
+  .contador span {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+}
+
+
+/* =================================
+   MÓVIL HORIZONTAL
+================================= */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+  .countdown {
+    min-height: 400px;
+  }
+
+}

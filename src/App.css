@@ -1,0 +1,270 @@
+/* =================================
+   FUENTES
+================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+
+/* =================================
+   RESET GLOBAL
+================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  overflow-x: hidden;
+
+  background: #fcf8f5;
+
+  color: var(--color-texto, #432b37);
+
+  font-family: "Cormorant Garamond", serif;
+
+  -webkit-text-size-adjust: 100%;
+}
+
+button,
+a {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+/* =================================
+   CONTENEDOR PRINCIPAL
+================================= */
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  overflow-x: hidden;
+}
+
+.invitacion {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at top,
+      var(--color-blanco),
+      var(--color-fondo)
+    );
+
+  color: var(--color-texto);
+}
+
+
+/* =================================
+   ESTILOS COMPARTIDOS
+================================= */
+
+.seccion {
+  width: 100%;
+  padding: 110px 25px;
+
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 15px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 10px;
+  letter-spacing: 5px;
+
+  color: var(--color-acento);
+
+  text-transform: uppercase;
+}
+
+.seccion h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(45px, 9vw, 75px);
+
+  font-weight: 400;
+
+  line-height: .9;
+
+  text-wrap: balance;
+}
+
+
+/* =================================
+   ANIMACIONES GLOBALES
+================================= */
+
+@keyframes aparecer {
+
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =================================
+   TABLETS
+================================= */
+
+@media (max-width: 1024px) {
+
+  .seccion {
+    padding: 95px 30px;
+  }
+
+}
+
+
+/* =================================
+   TABLETS PEQUEÑAS
+================================= */
+
+@media (max-width: 768px) {
+
+  .seccion {
+    padding: 85px 25px;
+  }
+
+  .seccion h2 {
+    font-size: clamp(42px, 8vw, 65px);
+  }
+
+}
+
+
+/* =================================
+   CELULARES
+================================= */
+
+@media (max-width: 700px) {
+
+  .seccion {
+    padding: 75px 20px;
+  }
+
+  .eyebrow {
+    margin-bottom: 12px;
+
+    font-size: 9px;
+    letter-spacing: 4px;
+  }
+
+  .seccion h2 {
+    font-size: clamp(40px, 11vw, 58px);
+    line-height: .95;
+  }
+
+}
+
+
+/* =================================
+   CELULARES PEQUEÑOS
+   375px
+================================= */
+
+@media (max-width: 375px) {
+
+  .seccion {
+    padding: 65px 16px;
+  }
+
+  .eyebrow {
+    font-size: 8px;
+    letter-spacing: 3px;
+  }
+
+  .seccion h2 {
+    font-size: 40px;
+  }
+
+}
+
+
+/* =================================
+   LANDSCAPE MÓVIL
+================================= */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+  .seccion {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+}
+
+
+/* =================================
+   PANTALLAS GRANDES
+================================= */
+
+@media (min-width: 1200px) {
+
+  .seccion {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+}
+
+
+/* =================================
+   ÁREAS SEGURAS IPHONE
+================================= */
+
+@supports (padding: env(safe-area-inset-top)) {
+
+  .portada {
+    padding-top: env(safe-area-inset-top);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+  }
+
+}
+
+
+/* =================================
+   REDUCIR MOVIMIENTO
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+}

@@ -1,0 +1,505 @@
+/* =================================
+   PORTADA
+================================= */
+
+.portada {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.45)
+    ),
+    var(--fondo-portada) center / cover;
+
+  color: var(--color-blanco);
+
+}
+
+
+/* =================================
+   OVERLAY
+================================= */
+
+.portada-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      transparent 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+
+}
+
+
+/* =================================
+   CONTENIDO
+================================= */
+
+.portada-contenido {
+
+  position: relative;
+
+  z-index: 2;
+
+  width: min(100%, 800px);
+
+  max-height: 100%;
+
+  padding: 30px;
+
+  animation: aparecer 1.5s ease;
+
+}
+
+
+/* =================================
+   MINI TÍTULO
+================================= */
+
+.mini-titulo {
+
+  margin: 0 0 25px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 7px;
+
+  text-transform: uppercase;
+
+}
+
+
+/* =================================
+   ORNAMENTO
+================================= */
+
+.portada .ornamento {
+
+  margin: 15px 0;
+
+  color: var(--color-acento);
+
+  font-size: 24px;
+
+}
+
+
+/* =================================
+   NOMBRE
+================================= */
+
+.portada h1 {
+
+  max-width: 100%;
+
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(64px, 20vw, 180px);
+
+  font-weight: 400;
+
+  line-height: .8;
+
+  text-wrap: balance;
+
+  overflow-wrap: break-word;
+
+}
+
+
+/* =================================
+   FECHA
+================================= */
+
+.fecha-portada {
+
+  margin: 35px 0 25px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 12px;
+
+  letter-spacing: 5px;
+
+}
+
+
+/* =================================
+   LÍNEA
+================================= */
+
+.linea-dorada {
+
+  width: 80px;
+
+  height: 1px;
+
+  margin: auto;
+
+  background: var(--color-acento);
+
+}
+
+
+/* =================================
+   FRASE
+================================= */
+
+.frase-portada {
+
+  max-width: 450px;
+
+  margin: 25px auto 40px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 21px;
+
+  font-style: italic;
+
+  line-height: 1.4;
+
+}
+
+
+/* =================================
+   BOTÓN
+================================= */
+
+.boton-entrada {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+
+  min-height: 46px;
+
+  margin: auto;
+
+  padding: 14px 25px;
+
+  border: 1px solid rgba(255,255,255,.7);
+
+  border-radius: 50px;
+
+  background: rgba(255,255,255,.08);
+
+  color: white;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  backdrop-filter: blur(10px);
+
+  transition: .4s ease;
+
+  touch-action: manipulation;
+
+}
+
+
+/* =================================
+   HOVER
+================================= */
+
+.boton-entrada:hover {
+
+  background: rgba(255,255,255,.2);
+
+  transform: translateY(-4px);
+
+}
+
+
+/* =================================
+   FLECHA
+================================= */
+
+.flecha {
+
+  font-size: 18px;
+
+}
+
+
+/* =================================
+   PARTÍCULAS
+================================= */
+
+.particulas span {
+
+  position: absolute;
+
+  color: rgba(255,255,255,.6);
+
+  animation: flotar 5s infinite ease-in-out;
+
+}
+
+.particulas span:nth-child(1) {
+  top: 15%;
+  left: 20%;
+}
+
+.particulas span:nth-child(2) {
+  top: 30%;
+  right: 15%;
+}
+
+.particulas span:nth-child(3) {
+  bottom: 20%;
+  left: 15%;
+}
+
+.particulas span:nth-child(4) {
+  bottom: 30%;
+  right: 20%;
+}
+
+.particulas span:nth-child(5) {
+  top: 10%;
+  right: 40%;
+}
+
+
+/* =================================
+   ANIMACIÓN
+================================= */
+
+@keyframes flotar {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: .3;
+  }
+
+  50% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 768px) {
+
+  .portada-contenido {
+    padding: 25px;
+  }
+
+  .portada h1 {
+    font-size: clamp(70px, 18vw, 140px);
+  }
+
+}
+
+
+/* =================================
+   CELULAR
+================================= */
+
+@media (max-width: 700px) {
+
+  .portada {
+    padding: 20px;
+  }
+
+  .portada-contenido {
+    padding: 20px 15px;
+  }
+
+  .mini-titulo {
+    margin-bottom: 18px;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+  }
+
+  .portada .ornamento {
+    margin: 12px 0;
+
+    font-size: 20px;
+  }
+
+  .portada h1 {
+    font-size: clamp(64px, 22vw, 110px);
+
+    line-height: .85;
+  }
+
+  .fecha-portada {
+    margin: 25px 0 20px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+  }
+
+  .frase-portada {
+    margin: 20px auto 30px;
+
+    font-size: 18px;
+
+    line-height: 1.35;
+  }
+
+  .boton-entrada {
+    min-height: 46px;
+
+    padding: 13px 20px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+  }
+
+}
+
+
+/* =================================
+   390px
+================================= */
+
+@media (max-width: 390px) {
+
+  .portada-contenido {
+    padding: 15px 10px;
+  }
+
+  .mini-titulo {
+    font-size: 8px;
+    letter-spacing: 3px;
+  }
+
+  .portada h1 {
+    font-size: clamp(60px, 21vw, 90px);
+  }
+
+  .fecha-portada {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .frase-portada {
+    font-size: 17px;
+  }
+
+}
+
+
+/* =================================
+   375px
+================================= */
+
+@media (max-width: 375px) {
+
+  .portada {
+    padding: 16px;
+  }
+
+  .portada-contenido {
+    padding: 10px;
+  }
+
+  .portada h1 {
+    font-size: clamp(58px, 20vw, 82px);
+  }
+
+  .frase-portada {
+    margin-bottom: 25px;
+
+    font-size: 16px;
+  }
+
+  .boton-entrada {
+    padding: 12px 18px;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+  }
+
+}
+
+
+/* =================================
+   LANDSCAPE MÓVIL
+================================= */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+  .portada {
+    padding: 10px 20px;
+  }
+
+  .portada-contenido {
+    padding: 10px;
+  }
+
+  .mini-titulo {
+    margin-bottom: 8px;
+  }
+
+  .portada .ornamento {
+    margin: 5px 0;
+  }
+
+  .portada h1 {
+    font-size: clamp(55px, 15vh, 100px);
+  }
+
+  .fecha-portada {
+    margin: 12px 0;
+  }
+
+  .frase-portada {
+    margin: 12px auto 18px;
+
+    font-size: 16px;
+  }
+
+  .particulas span {
+    display: none;
+  }
+
+}

@@ -1,0 +1,176 @@
+/* =================================
+   FOOTER
+================================= */
+
+.final {
+
+  padding: 76px;
+
+  background: var(--color-oscuro);
+
+  color: white;
+
+  text-align: center;
+
+}
+
+
+.final-ornamento {
+
+  margin-bottom: 20px;
+
+  color: var(--color-acento);
+
+  font-size: 25px;
+
+}
+
+
+.final p {
+
+  margin: 25px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 5px;
+
+}
+
+
+.final h2 {
+
+  max-width: 100%;
+
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(55px, 8vw, 75px);
+
+  font-weight: 400;
+
+  line-height: .9;
+
+  text-wrap: balance;
+
+}
+
+
+.final span {
+
+  display: block;
+
+  margin-top: 20px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  color: var(--color-acento);
+
+}
+
+
+.footer-mensaje {
+  margin: 0 auto;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-style: italic;
+
+  font-weight: 400;
+
+  font-size: 22px;
+
+  line-height: 1.6;
+
+  text-align: center;
+
+  color: var(--color-blanco);
+
+  opacity: .9;
+
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 768px) {
+
+  .final {
+    padding: 75px 25px;
+  }
+
+}
+
+
+/* =================================
+   CELULAR
+================================= */
+
+@media (max-width: 700px) {
+
+  .final {
+    padding: 50px 20px;
+  }
+
+  .final p {
+    font-size: 9px;
+    letter-spacing: 5px;
+  }
+
+  .final h2 {
+    font-size: clamp(50px, 16vw, 65px);
+  }
+
+  .footer-mensaje {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .final span {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+}
+
+
+/* =================================
+   375px
+================================= */
+
+@media (max-width: 375px) {
+
+  .final {
+    padding: 50px 16px;
+  }
+
+  .final h2 {
+    font-size: 48px;
+  }
+
+  .footer-mensaje {
+    font-size: 17px;
+  }
+
+}
+
+
+/* =================================
+   LANDSCAPE
+================================= */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+  .final {
+    padding: 60px 20px;
+  }
+
+}

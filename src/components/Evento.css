@@ -1,0 +1,157 @@
+/* =================================
+   EVENTO
+================================= */
+
+.tarjetas-evento {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  width: 100%;
+  max-width: 550px;
+
+  margin: 20px auto 35px;
+
+  gap: 16px;
+}
+
+.tarjeta-evento {
+  height: 100%;
+
+  padding: 25px 35px;
+
+  background: var(--color-blanco);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, .08);
+}
+
+.icono {
+  color: var(--color-principal);
+
+  font-size: 30px;
+}
+
+.tarjeta-evento h3 {
+  margin: 10px 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 28px;
+
+  font-weight: 500;
+}
+
+.tarjeta-evento p {
+  margin: 0;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1.8;
+}
+
+
+/* =================================
+   BOTONES UBICACIÓN
+================================= */
+
+.botones-ubicacion {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 15px;
+}
+
+.botones-ubicacion a {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+
+  padding: 13px 25px;
+
+  border: 1px solid var(--color-principal);
+
+  border-radius: 50px;
+
+  color: var(--color-oscuro);
+
+  text-decoration: none;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+
+  transition: .3s;
+}
+
+.botones-ubicacion a:hover {
+  background: var(--color-oscuro);
+
+  color: var(--color-blanco);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, .12);
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 768px) {
+
+  .tarjetas-evento {
+    gap: 12px;
+  }
+
+  .tarjeta-evento {
+    padding: 20px;
+  }
+
+}
+
+
+/* =================================
+   CELULAR
+================================= */
+
+@media (max-width: 500px) {
+
+  .tarjetas-evento {
+    grid-template-columns: 1fr;
+
+    max-width: 330px;
+
+    gap: 12px;
+  }
+
+  .tarjeta-evento {
+    padding: 15px 25px;
+  }
+
+  .botones-ubicacion {
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 280px;
+
+    margin: auto;
+
+    gap: 10px;
+  }
+
+  .botones-ubicacion a {
+    width: 100%;
+  }
+
+}
