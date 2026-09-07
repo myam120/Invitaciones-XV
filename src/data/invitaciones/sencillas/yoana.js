@@ -73,16 +73,16 @@ const yoana = {
       activa: true,
       titulo: "Ceremonia Religiosa",
       hora: "17:00 Hrs",
-      lugar: "Parroquia de San José",
-      maps: "https://maps.app.goo.gl/",
+      lugar: "Parroquia de San Sebastián",
+      maps: "https://maps.app.goo.gl/YrSq4ui5NULjGMdU7",
     },
 
     recepcion: {
       activa: true,
       titulo: "Recepción",
       hora: "19:00 Hrs",
-      lugar: "Salón de Eventos Villa Real",
-      maps: "https://maps.app.goo.gl/",
+      lugar: "Salón De Eventos Sociales Villa Fernanda Mérida",
+      maps: "https://maps.app.goo.gl/zHLufHUiyFoS5rjg8",
     },
 
   },

@@ -53,7 +53,7 @@ const camila = {
       titulo: "Ceremonia Religiosa",
       hora: "17:00 Hrs",
       lugar: "Iglesia de Santa Lucía",
-      maps: "https://maps.app.goo.gl/NDxq24q1ShbunCXB6", // reemplaza por la tuya
+      maps: "https://maps.app.goo.gl/9FzsT7NCSPPcx24e8", // reemplaza por la tuya
     },
 
     recepcion: {
@@ -61,7 +61,7 @@ const camila = {
       titulo: "Recepción",
       hora: "18:00 Hrs",
       lugar: "Salón De Eventos Sociales Villa Fernanda Mérida",
-      maps: "https://maps.app.goo.gl/uunN7896zJZSX9GG8", // reemplaza por la tuya
+      maps: "https://maps.app.goo.gl/zHLufHUiyFoS5rjg8", // reemplaza por la tuya
     },
   },
 
