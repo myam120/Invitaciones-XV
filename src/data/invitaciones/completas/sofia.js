@@ -100,7 +100,7 @@ const sofia = {
   evento: {
     fecha: "2026-10-24T19:00:00",
     hora: "7:00 PM",
-    lugar: "Salón de Eventos Elegance",
+    lugar: "Zamna Salón de Eventos",
     direccion: "Mérida, Yucatán",
   },
 
@@ -125,11 +125,11 @@ const sofia = {
     maps: {
       activa: true,
       texto: "Ver en Google Maps",
-      url: "https://www.google.com/maps",
+      url: "https://maps.app.goo.gl/XguMpKnzMx5NnWY8",
     },
 
     regalos: {
-      activa: true,
+      activa: false,
       url: "https://www.amazon.com/",
     },
 

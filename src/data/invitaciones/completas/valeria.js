@@ -100,7 +100,7 @@ const valeria = {
   evento: {
     fecha: "2026-09-05T20:00:00",
     hora: "8:00 PM",
-    lugar: "Salón Jardines del Sur",
+    lugar: "Zamna Salón de Eventos",
     direccion: "Mérida, Yucatán",
   },
 
@@ -125,7 +125,7 @@ const valeria = {
     maps: {
       activa: true,
       texto: "Ver en Google Maps",
-      url: "https://maps.app.goo.gl/m2rS1hqCMXGifoNq5",
+      url: "https://maps.app.goo.gl/XguMpKnzMx5NnWY8",
     },
 
     regalos: {
