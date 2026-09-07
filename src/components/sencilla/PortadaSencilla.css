@@ -1,0 +1,1131 @@
+/* =========================================================
+   PortadaSencilla.css
+   Diseño responsive para:
+   celular, tablet, laptop y pantallas grandes
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap');
+
+
+/* =========================================================
+   PORTADA
+========================================================= */
+
+.portada-sencilla {
+
+  position: relative;
+
+  width: 100%;
+
+  min-height: 100vh;
+  min-height: 100svh;
+
+  /*
+    Permite que en pantallas pequeñas
+    el contenido pueda crecer.
+  */
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background-image:
+    var(--sencilla-fondo);
+
+  background-size: cover;
+
+  background-position: center center;
+
+  background-repeat: no-repeat;
+
+  color:
+    var(
+      --sencilla-oscuro,
+      #1f2419
+    );
+
+  text-align: center;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+}
+
+
+/* =========================================================
+   BOX SIZING
+========================================================= */
+
+.portada-sencilla *,
+.portada-sencilla *::before,
+.portada-sencilla *::after {
+
+  box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   DECORACIÓN SUPERIOR
+========================================================= */
+
+.decoracion-superior {
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  height: auto;
+
+  min-height: 40px;
+
+  object-fit: contain;
+
+  object-position: top center;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+
+  opacity: 0.85;
+
+}
+
+
+/* =========================================================
+   CORONA
+========================================================= */
+
+.corona {
+
+  position: absolute;
+
+  top:
+    clamp(
+      15px,
+      3vh,
+      35px
+    );
+
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  width:
+    clamp(
+      90px,
+      14vw,
+      220px
+    );
+
+  max-width: 25vw;
+
+  height: auto;
+
+  object-fit: contain;
+
+  z-index: 3;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+
+  filter:
+    drop-shadow(
+      0 4px 8px
+      rgba(0, 0, 0, 0.12)
+    );
+
+}
+
+
+/* =========================================================
+   CONTENIDO PRINCIPAL
+========================================================= */
+
+.portada-contenido {
+
+  position: relative;
+
+  z-index: 4;
+
+  width:
+    min(
+      100%,
+      1000px
+    );
+
+  margin: 0 auto;
+
+  padding:
+
+    clamp(
+      100px,
+      10vw,
+      150px
+    )
+
+    clamp(
+      16px,
+      4vw,
+      40px
+    )
+
+    clamp(
+      150px,
+      18vw,
+      240px
+    );
+
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.titulo-xxl {
+
+  margin:
+
+    clamp(
+      15px,
+      3vw,
+      30px
+    )
+
+    0
+
+    clamp(
+      12px,
+      2vw,
+      25px
+    );
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(
+      18px,
+      3vw,
+      30px
+    );
+
+  line-height: 1.2;
+
+  letter-spacing:
+    clamp(
+      1px,
+      0.4vw,
+      3px
+    );
+
+  font-weight: 600;
+
+  color:
+    rgba(
+      33,
+      37,
+      28,
+      0.75
+    );
+
+  text-transform: uppercase;
+
+  overflow-wrap: break-word;
+
+}
+
+
+/* =========================================================
+   NOMBRE
+========================================================= */
+
+.nombre {
+
+  width: 100%;
+
+  max-width: 95%;
+
+  margin:
+    0 auto
+    clamp(
+      12px,
+      2vw,
+      25px
+    );
+
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  font-size:
+    clamp(
+      42px,
+      8vw,
+      100px
+    );
+
+  line-height: 0.95;
+
+  font-weight: 400;
+
+  color:
+    var(
+      --sencilla-oscuro,
+      #1f2419
+    );
+
+  overflow-wrap: break-word;
+
+  word-break: normal;
+
+}
+
+
+/* =========================================================
+   SUBTÍTULO
+========================================================= */
+
+.subtitulo {
+
+  width: 100%;
+
+  max-width: 720px;
+
+  margin:
+
+    0 auto
+
+    clamp(
+      20px,
+      4vw,
+      35px
+    );
+
+  padding:
+
+    0
+
+    clamp(
+      5px,
+      3vw,
+      25px
+    );
+
+  font-size:
+    clamp(
+      15px,
+      2.2vw,
+      20px
+    );
+
+  line-height: 1.5;
+
+  color:
+    rgba(
+      0,
+      0,
+      0,
+      0.62
+    );
+
+  font-style: italic;
+
+  overflow-wrap: break-word;
+
+}
+
+
+/* =========================================================
+   PERSONAJE
+========================================================= */
+
+.personaje {
+
+  position: absolute;
+
+  right:
+    clamp(
+      -20px,
+      -1vw,
+      -5px
+    );
+
+  bottom:
+    clamp(
+      -10px,
+      -1vw,
+      -3px
+    );
+
+  width:
+    clamp(
+      160px,
+      30vw,
+      420px
+    );
+
+  height: auto;
+
+  max-height: 50%;
+
+  object-fit: contain;
+
+  object-position:
+    bottom right;
+
+  z-index: 4;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+
+}
+
+
+/* =========================================================
+   DECORACIÓN INFERIOR
+========================================================= */
+
+.decoracion-inferior {
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: 0;
+
+  width:
+    clamp(
+      180px,
+      35vw,
+      500px
+    );
+
+  height: auto;
+
+  max-width: 60%;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+
+  opacity: 0.95;
+
+}
+
+
+/* =========================================================
+   TABLET
+   481px - 860px
+========================================================= */
+
+@media
+  (min-width: 481px)
+  and
+  (max-width: 860px) {
+
+  .portada-sencilla {
+
+    min-height: 100svh;
+
+    /*
+      Permitimos crecimiento vertical
+      si Familia + Evento + Confirmación
+      ocupan más espacio.
+    */
+    height: auto;
+
+  }
+
+
+  .portada-contenido {
+
+    width: 100%;
+
+    padding:
+
+      100px
+
+      25px
+
+      190px;
+
+  }
+
+
+  .titulo-xxl {
+
+    font-size: 25px;
+
+  }
+
+
+  .nombre {
+
+    font-size:
+      clamp(
+        60px,
+        11vw,
+        90px
+      );
+
+  }
+
+
+  .subtitulo {
+
+    max-width: 580px;
+
+    font-size: 18px;
+
+  }
+
+
+  .corona {
+
+    width:
+      clamp(
+        120px,
+        18vw,
+        170px
+      );
+
+  }
+
+
+  .personaje {
+
+    width:
+      clamp(
+        180px,
+        34vw,
+        300px
+      );
+
+    max-height: 42%;
+
+  }
+
+
+  .decoracion-inferior {
+
+    width:
+      clamp(
+        180px,
+        38vw,
+        350px
+      );
+
+  }
+
+}
+
+
+/* =========================================================
+   CELULAR
+   376px - 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .portada-sencilla {
+
+    min-height: 100svh;
+
+    min-height: 100dvh;
+
+    /*
+      El contenido puede crecer
+      si es necesario.
+    */
+    height: auto;
+
+    align-items: flex-start;
+
+  }
+
+
+  /* -------------------------------------------------------
+     DECORACIÓN SUPERIOR
+  ------------------------------------------------------- */
+
+  .decoracion-superior {
+
+    width: 100%;
+
+    min-height: 30px;
+
+  }
+
+
+  /* -------------------------------------------------------
+     CORONA
+  ------------------------------------------------------- */
+
+  .corona {
+
+    top: 20px;
+
+    width:
+      clamp(
+        80px,
+        24vw,
+        115px
+      );
+
+    max-width: 30vw;
+
+  }
+
+
+  /* -------------------------------------------------------
+     CONTENIDO
+  ------------------------------------------------------- */
+
+  .portada-contenido {
+
+    width: 100%;
+
+    padding:
+
+      85px
+
+      14px
+
+      145px;
+
+  }
+
+
+  /* -------------------------------------------------------
+     TÍTULO
+  ------------------------------------------------------- */
+
+  .titulo-xxl {
+
+    margin-top: 20px;
+
+    margin-bottom: 12px;
+
+    font-size: 18px;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.2;
+
+  }
+
+
+  /* -------------------------------------------------------
+     NOMBRE
+  ------------------------------------------------------- */
+
+  .nombre {
+
+    max-width: 100%;
+
+    margin-bottom: 16px;
+
+    font-size:
+      clamp(
+        42px,
+        13vw,
+        62px
+      );
+
+    line-height: 0.95;
+
+  }
+
+
+  /* -------------------------------------------------------
+     SUBTÍTULO
+  ------------------------------------------------------- */
+
+  .subtitulo {
+
+    max-width: 340px;
+
+    margin-bottom: 25px;
+
+    padding: 0 5px;
+
+    font-size: 15px;
+
+    line-height: 1.4;
+
+  }
+
+
+  /* -------------------------------------------------------
+     PERSONAJE
+  ------------------------------------------------------- */
+
+  .personaje {
+
+    right: -5px;
+
+    bottom: -3px;
+
+    width:
+      clamp(
+        150px,
+        44vw,
+        210px
+      );
+
+    max-height: 38%;
+
+  }
+
+
+  /* -------------------------------------------------------
+     DECORACIÓN INFERIOR
+  ------------------------------------------------------- */
+
+  .decoracion-inferior {
+
+    left: 0;
+
+    bottom: 0;
+
+    width:
+      clamp(
+        150px,
+        48vw,
+        230px
+      );
+
+    max-width: 55%;
+
+  }
+
+}
+
+
+/* =========================================================
+   CELULAR PEQUEÑO
+   321px - 375px
+========================================================= */
+
+@media (max-width: 375px) {
+
+  .portada-contenido {
+
+    padding:
+
+      75px
+
+      10px
+
+      125px;
+
+  }
+
+
+  .titulo-xxl {
+
+    font-size: 16px;
+
+    letter-spacing: 1px;
+
+  }
+
+
+  .nombre {
+
+    font-size:
+      clamp(
+        38px,
+        13vw,
+        52px
+      );
+
+  }
+
+
+  .subtitulo {
+
+    max-width: 300px;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+
+  }
+
+
+  .corona {
+
+    top: 18px;
+
+    width: 90px;
+
+  }
+
+
+  .personaje {
+
+    width:
+      clamp(
+        140px,
+        45vw,
+        175px
+      );
+
+    max-height: 35%;
+
+  }
+
+
+  .decoracion-inferior {
+
+    width:
+      clamp(
+        145px,
+        48vw,
+        180px
+      );
+
+  }
+
+}
+
+
+/* =========================================================
+   CELULAR MUY PEQUEÑO
+   320px O MENOS
+========================================================= */
+
+@media (max-width: 320px) {
+
+  .portada-contenido {
+
+    padding:
+
+      65px
+
+      8px
+
+      110px;
+
+  }
+
+
+  .corona {
+
+    width: 75px;
+
+    top: 15px;
+
+  }
+
+
+  .titulo-xxl {
+
+    font-size: 15px;
+
+  }
+
+
+  .nombre {
+
+    font-size: 38px;
+
+  }
+
+
+  .subtitulo {
+
+    font-size: 13px;
+
+  }
+
+
+  .personaje {
+
+    width: 140px;
+
+    max-height: 32%;
+
+  }
+
+
+  .decoracion-inferior {
+
+    width: 160px;
+
+  }
+
+}
+
+
+/* =========================================================
+   CELULAR / TABLET HORIZONTAL
+========================================================= */
+
+@media
+  (max-height: 600px)
+  and
+  (orientation: landscape) {
+
+  .portada-sencilla {
+
+    min-height: 100svh;
+
+    height: auto;
+
+    align-items: flex-start;
+
+    overflow-y: auto;
+
+  }
+
+
+  .portada-contenido {
+
+    padding:
+
+      65px
+
+      20px
+
+      150px;
+
+  }
+
+
+  .corona {
+
+    top: 8px;
+
+    width: 80px;
+
+  }
+
+
+  .titulo-xxl {
+
+    margin-top: 15px;
+
+    margin-bottom: 8px;
+
+    font-size: 16px;
+
+  }
+
+
+  .nombre {
+
+    margin-bottom: 10px;
+
+    font-size:
+      clamp(
+        42px,
+        8vw,
+        68px
+      );
+
+  }
+
+
+  .subtitulo {
+
+    margin-bottom: 18px;
+
+    font-size: 14px;
+
+    line-height: 1.3;
+
+  }
+
+
+  .personaje {
+
+    width: 160px;
+
+    max-height: 48%;
+
+  }
+
+
+  .decoracion-inferior {
+
+    width: 200px;
+
+  }
+
+}
+
+
+/* =========================================================
+   ESCRITORIO GRANDE
+   1400px+
+========================================================= */
+
+@media (min-width: 1400px) {
+
+  .portada-contenido {
+
+    width: min(
+      90%,
+      1100px
+    );
+
+  }
+
+
+  .titulo-xxl {
+
+    font-size: 30px;
+
+  }
+
+
+  .nombre {
+
+    font-size: 105px;
+
+  }
+
+
+  .subtitulo {
+
+    font-size: 21px;
+
+    max-width: 700px;
+
+  }
+
+
+  .corona {
+
+    width: 220px;
+
+  }
+
+
+  .personaje {
+
+    width: 430px;
+
+  }
+
+
+  .decoracion-inferior {
+
+    width: 520px;
+
+  }
+
+}
+
+
+/* =========================================================
+   PANTALLAS MUY GRANDES
+   1800px+
+========================================================= */
+
+@media (min-width: 1800px) {
+
+  .portada-contenido {
+
+    width: min(
+      85%,
+      1200px
+    );
+
+  }
+
+
+  .nombre {
+
+    font-size: 120px;
+
+  }
+
+
+  .subtitulo {
+
+    font-size: 23px;
+
+  }
+
+
+  .corona {
+
+    width: 250px;
+
+  }
+
+
+  .personaje {
+
+    width: 470px;
+
+  }
+
+
+  .decoracion-inferior {
+
+    width: 580px;
+
+  }
+
+}
+
+
+/* =========================================================
+   IMÁGENES DECORATIVAS
+========================================================= */
+
+.decoracion-superior,
+.decoracion-inferior,
+.corona,
+.personaje {
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+
+  -webkit-touch-callout: none;
+
+}
+
+
+/* =========================================================
+   ACCESIBILIDAD
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .portada-sencilla {
+
+    scroll-behavior: auto;
+
+  }
+
+}

@@ -1,0 +1,731 @@
+/* =========================================================
+   REPRODUCTOR DE MÚSICA
+   SENCILLA
+========================================================= */
+
+.reproductor-musica-sencilla {
+
+  --musica-acento:
+    var(--sencilla-acento, #efece5);
+
+  --musica-oscuro:
+    var(--sencilla-oscuroClaro);
+
+  position: fixed;
+
+  right: 25px;
+
+  bottom:
+    calc(
+      25px +
+      env(safe-area-inset-bottom)
+    );
+
+  z-index: 500;
+
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+
+  min-width: 265px;
+
+  padding:
+    11px
+    14px;
+
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      .35
+    );
+
+
+  border-radius: 50px;
+
+
+  background:
+    color-mix(
+      in srgb,
+      var(--musica-oscuro) 91%,
+      transparent
+    );
+
+
+  color: #ffffff;
+
+
+  box-shadow:
+    0 10px 30px
+    rgba(
+      0,
+      0,
+      0,
+      .16
+    );
+
+
+  backdrop-filter:
+    blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+
+
+  overflow: hidden;
+
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+
+/* =========================================================
+   BRILLO SUPERIOR
+========================================================= */
+
+.reproductor-musica-sencilla::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(
+        255,
+        255,
+        255,
+        .65
+      ),
+      transparent
+    );
+
+
+  opacity: .7;
+}
+
+
+/* =========================================================
+   INFORMACIÓN
+========================================================= */
+
+.musica-info-sencilla {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   VINILO
+========================================================= */
+
+.vinilo-sencillo {
+
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+
+  border-radius: 50%;
+
+
+  background:
+    radial-gradient(
+      circle at center,
+      #383b32 0,
+      #20231e 35%,
+      #11130f 70%,
+      #292c25 100%
+    );
+
+
+  border:
+    1px solid
+    rgba(
+      184,
+      154,
+      90,
+      .75
+    );
+
+
+  box-shadow:
+    0 0 0 2px
+    rgba(
+      184,
+      154,
+      90,
+      .10
+    ),
+
+    inset 0 0 8px
+    rgba(
+      255,
+      255,
+      255,
+      .08
+    );
+
+
+  color:
+    var(--musica-acento);
+
+
+  font-size: 17px;
+
+
+  transition:
+    transform .5s ease,
+    box-shadow .3s ease;
+}
+
+
+/* =========================================================
+   VINILO ACTIVO
+========================================================= */
+
+.reproductor-musica-sencilla.activo
+.vinilo-sencillo {
+
+  animation:
+    girarViniloSencillo
+    4s
+    linear
+    infinite;
+
+
+  box-shadow:
+
+    0 0 0 2px
+    rgba(
+      184,
+      154,
+      90,
+      .12
+    ),
+
+    0 0 14px
+    rgba(
+      184,
+      154,
+      90,
+      .16
+    ),
+
+    inset 0 0 8px
+    rgba(
+      255,
+      255,
+      255,
+      .08
+    );
+}
+
+
+/* =========================================================
+   TEXTO
+========================================================= */
+
+.musica-texto-sencillo {
+
+  display: flex;
+
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   ETIQUETA
+========================================================= */
+
+.musica-label-sencilla {
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 7px;
+
+  letter-spacing: 2px;
+
+  color:
+    var(--musica-acento);
+
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   NOMBRE DE LA CANCIÓN
+========================================================= */
+
+.musica-texto-sencillo strong {
+
+  max-width: 135px;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 16px;
+
+  font-weight: 500;
+
+  line-height: 1.15;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   ONDAS
+========================================================= */
+
+.ondas-sencillas {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 2px;
+
+  height: 8px;
+
+  margin-top: 3px;
+}
+
+
+/* =========================================================
+   BARRAS
+========================================================= */
+
+.ondas-sencillas i {
+
+  display: block;
+
+  width: 2px;
+
+  height: 4px;
+
+  border-radius: 5px;
+
+  background:
+    var(--musica-acento);
+
+  opacity: .75;
+}
+
+
+/* =========================================================
+   ONDAS ACTIVAS
+========================================================= */
+
+.reproductor-musica-sencilla.activo
+.ondas-sencillas i {
+
+  animation:
+    ondaSencilla
+    .8s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+
+/* =========================================================
+   DIFERENTES ALTURAS
+========================================================= */
+
+.ondas-sencillas i:nth-child(1) {
+  animation-delay: .1s;
+}
+
+.ondas-sencillas i:nth-child(2) {
+  animation-delay: .2s;
+}
+
+.ondas-sencillas i:nth-child(3) {
+  animation-delay: .3s;
+}
+
+.ondas-sencillas i:nth-child(4) {
+  animation-delay: .2s;
+}
+
+.ondas-sencillas i:nth-child(5) {
+  animation-delay: .1s;
+}
+
+
+/* =========================================================
+   BOTÓN
+========================================================= */
+
+.boton-musica-sencilla {
+
+  width: 39px;
+  height: 39px;
+
+  flex-shrink: 0;
+
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+
+  padding: 0;
+
+
+  border:
+    1px solid
+    var(--musica-acento);
+
+
+  border-radius: 50%;
+
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      .03
+    );
+
+
+  color:
+    var(--musica-acento);
+
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+
+  transition:
+  background .25s ease,
+  transform .25s ease,
+  box-shadow .25s ease;
+
+  touch-action:
+    manipulation;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.boton-musica-sencilla:hover {
+
+  background:
+    var(--musica-acento);
+
+  color:
+    var(--musica-oscuro);
+
+  transform:
+    scale(1.06);
+
+  box-shadow:
+    0 4px 12px
+    rgba(
+      184,
+      154,
+      90,
+      .22
+    );
+}
+
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.boton-musica-sencilla:active {
+
+  transform:
+    scale(.94);
+}
+
+
+/* =========================================================
+   PROGRESO
+========================================================= */
+
+.progreso-musica-sencilla {
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: 0;
+
+
+  height: 2px;
+
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--musica-acento),
+      #d8c48b
+    );
+
+
+  transition:
+    width .2s linear;
+
+
+  box-shadow:
+    0 0 5px
+    rgba(
+      184,
+      154,
+      90,
+      .25
+    );
+}
+
+
+/* =========================================================
+   ANIMACIÓN VINILO
+========================================================= */
+
+@keyframes girarViniloSencillo {
+
+  from {
+
+    transform:
+      rotate(0deg);
+
+  }
+
+  to {
+
+    transform:
+      rotate(360deg);
+
+  }
+
+}
+
+
+/* =========================================================
+   ANIMACIÓN ONDAS
+========================================================= */
+
+@keyframes ondaSencilla {
+
+  from {
+
+    height: 3px;
+
+    opacity: .45;
+
+  }
+
+  to {
+
+    height: 8px;
+
+    opacity: 1;
+
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .reproductor-musica-sencilla {
+
+    right: 15px;
+
+    min-width: 0;
+
+    max-width:
+      calc(
+        100vw - 30px
+      );
+
+    padding:
+      10px 12px;
+  }
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .reproductor-musica-sencilla {
+
+    right: 15px;
+
+    bottom:
+      calc(
+        15px +
+        env(safe-area-inset-bottom)
+      );
+
+    max-width:
+      calc(
+        100vw - 30px
+      );
+
+    padding:
+      9px 11px;
+
+    gap: 10px;
+  }
+
+
+  .musica-texto-sencillo strong {
+
+    max-width: 105px;
+  }
+
+}
+
+
+/* =========================================================
+   375px
+========================================================= */
+
+@media (max-width: 375px) {
+
+  .reproductor-musica-sencilla {
+
+    right: 10px;
+
+    max-width:
+      calc(
+        100vw - 20px
+      );
+
+    padding:
+      8px 10px;
+
+    gap: 8px;
+  }
+
+
+  .vinilo-sencillo {
+
+    width: 35px;
+
+    height: 35px;
+
+    font-size: 15px;
+  }
+
+
+  .boton-musica-sencilla {
+
+    width: 35px;
+
+    height: 35px;
+
+    font-size: 11px;
+  }
+
+
+  .musica-texto-sencillo strong {
+
+    max-width: 85px;
+
+    font-size: 14px;
+  }
+
+
+  .musica-label-sencilla {
+
+    font-size: 6px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCIR ANIMACIONES
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .reproductor-musica-sencilla.activo
+  .vinilo-sencillo {
+
+    animation: none;
+  }
+
+
+  .reproductor-musica-sencilla.activo
+  .ondas-sencillas i {
+
+    animation: none;
+  }
+
+
+  .boton-musica-sencilla {
+
+    transition: none;
+  }
+
+}

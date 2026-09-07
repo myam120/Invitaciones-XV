@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import Invitacion from "./pages/Invitacion";
-import NotFound from "./components/NotFound";
+import NotFound from "./components/completa/NotFound";
 
 function App() {
   return (

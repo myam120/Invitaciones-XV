@@ -1,509 +1,61 @@
-import { useEffect, useRef, useState } from "react";
-import "../App.css";
 import { useParams } from "react-router-dom";
-import invitaciones from "../data/invitaciones";
-import NotFound from "../components/NotFound";
 
-import Portada from "../components/Portada";
-import ReproductorMusica from "../components/ReproductorMusica";
-import Hero from "../components/Hero";
-import Mensaje from "../components/Mensaje";
-import Countdown from "../components/Countdown";
-import Evento from "../components/Evento";
-import Galeria from "../components/Galeria";
-import Familia from "../components/Familia";
-import Regalos from "../components/Regalos";
-import Confirmacion from "../components/Confirmacion";
-import Footer from "../components/Footer";
+import invitacionesCompletas
+  from "../data/invitaciones/completas";
+
+import invitacionesSencillas
+  from "../data/invitaciones/sencillas";
+
+import InvitacionCompleta from "./InvitacionCompleta";
+import InvitacionSencilla from "./InvitacionSencilla";
+
+import NotFound from "../components/completa/NotFound";
 
 
 function Invitacion() {
 
   const { slug } = useParams();
 
-  const datos = invitaciones[slug];
 
-  const [abierta, setAbierta] = useState(false);
-  const [musica, setMusica] = useState(false);
-  const [tiempo, setTiempo] = useState({});
-  const [progresoMusica, setProgresoMusica] = useState(0);
-
-  const audioRef = useRef(null);
-
-  // ===== SEO ===== //
-
-  useEffect(() => {
-
-    if (!datos) return;
-
-    document.title = datos.seo?.titulo || `Mis XV Años | ${datos.nombre}`;
-
-    const actualizarMeta = (nombre, contenido) => {
-
-      let meta = document.querySelector(
-        `meta[name="${nombre}"]`
-      );
-
-      if (!meta) {
-
-        meta = document.createElement("meta");
-
-        meta.setAttribute("name", nombre);
-
-        document.head.appendChild(meta);
-
-      }
-
-      meta.setAttribute("content", contenido);
-
-    };
+  // Buscar primero en completas
+  const datosCompletos =
+    invitacionesCompletas[slug];
 
 
-    const actualizarOpenGraph = (propiedad, contenido) => {
-
-      let meta = document.querySelector(
-        `meta[property="${propiedad}"]`
-      );
-
-      if (!meta) {
-
-        meta = document.createElement("meta");
-
-        meta.setAttribute("property", propiedad);
-
-        document.head.appendChild(meta);
-
-      }
-
-      meta.setAttribute("content", contenido);
-
-    };
-
-    const actualizarTwitter = (nombre, contenido) => {
-
-      let meta = document.querySelector(
-        `meta[name="${nombre}"]`
-      );
-
-      if (!meta) {
-
-        meta = document.createElement("meta");
-
-        meta.setAttribute("name", nombre);
-
-        document.head.appendChild(meta);
-
-      }
-
-      meta.setAttribute("content", contenido);
-
-    };
-
-    const titulo =
-      datos.seo?.titulo ||
-      `Mis XV Años | ${datos.nombre}`;
-
-    const descripcion =
-      datos.seo?.descripcion ||
-      `Acompáñame a celebrar mis XV años, ${datos.nombre}.`;
-
-    const imagen =
-      datos.seo?.imagen ||
-      datos.recursos?.hero;
+  // Buscar después en sencillas
+  const datosSencillos =
+    invitacionesSencillas[slug];
 
 
-    // DESCRIPTION
+  // INVITACIÓN COMPLETA
 
-    actualizarMeta(
-      "description",
-      descripcion
+  if (datosCompletos) {
+
+    return (
+      <InvitacionCompleta
+        datos={datosCompletos}
+      />
     );
 
-    // TWITTER / X
-
-    actualizarTwitter(
-      "twitter:card",
-      "summary_large_image"
-    );
-
-    actualizarTwitter(
-      "twitter:title",
-      titulo
-    );
-
-    actualizarTwitter(
-      "twitter:description",
-      descripcion
-    );
-
-    actualizarTwitter(
-      "twitter:image",
-      imagen
-    );
-
-    // OPEN GRAPH
-
-    actualizarOpenGraph(
-      "og:title",
-      titulo
-    );
-
-    actualizarOpenGraph(
-      "og:description",
-      descripcion
-    );
-
-    actualizarOpenGraph(
-      "og:image",
-      imagen
-    );
-
-    actualizarOpenGraph(
-      "og:image:alt",
-      `Invitación de XV años de ${datos.nombre}`
-    );
-
-    actualizarOpenGraph(
-      "og:type",
-      "website"
-    );
-
-
-  }, [datos]);
-
-
-  // ===== CUENTA REGRESIVA ===== //
-
-  useEffect(() => {
-
-    if (!datos) return;
-
-    const calcularTiempo = () => {
-
-      const ahora = new Date();
-
-      const evento = new Date(
-        datos.evento.fecha
-      );
-
-      const diferencia = evento - ahora;
-
-      if (diferencia <= 0) {
-
-        setTiempo({
-          dias: 0,
-          horas: 0,
-          minutos: 0,
-          segundos: 0,
-        });
-
-        return;
-      }
-
-      const dias = Math.floor(
-        diferencia / (1000 * 60 * 60 * 24)
-      );
-
-      const horas = Math.floor(
-        (diferencia / (1000 * 60 * 60)) % 24
-      );
-
-      const minutos = Math.floor(
-        (diferencia / (1000 * 60)) % 60
-      );
-
-      const segundos = Math.floor(
-        (diferencia / 1000) % 60
-      );
-
-      setTiempo({
-        dias,
-        horas,
-        minutos,
-        segundos,
-      });
-
-    };
-
-    calcularTiempo();
-
-    const intervalo = setInterval(
-      calcularTiempo,
-      1000
-    );
-
-    return () => clearInterval(intervalo);
-
-  }, [datos]);
-
-
-  // ===== MÚSICA ===== //
-
-  useEffect(() => {
-
-    const audio = audioRef.current;
-
-    if (!audio) return;
-
-    const actualizarProgreso = () => {
-
-      if (audio.duration) {
-
-        const porcentaje =
-          (audio.currentTime / audio.duration) * 100;
-
-        setProgresoMusica(porcentaje);
-
-      }
-
-    };
-
-    const cuandoTermina = () => {
-
-      setMusica(false);
-      setProgresoMusica(0);
-
-    };
-
-    audio.addEventListener(
-      "timeupdate",
-      actualizarProgreso
-    );
-
-    audio.addEventListener(
-      "ended",
-      cuandoTermina
-    );
-
-    return () => {
-
-      audio.removeEventListener(
-        "timeupdate",
-        actualizarProgreso
-      );
-
-      audio.removeEventListener(
-        "ended",
-        cuandoTermina
-      );
-
-    };
-
-  }, [datos, abierta]);
-
-
-  // ===== ABRIR INVITACIÓN ===== //
-
-  const abrirInvitacion = () => {
-
-    setAbierta(true);
-
-    if (
-      !datos.musica.activa ||
-      !datos.musica.autoplay
-    ) {
-      return;
-    }
-
-    setTimeout(() => {
-
-      if (audioRef.current) {
-
-        audioRef.current
-          .play()
-          .then(() => {
-
-            setMusica(true);
-
-          })
-          .catch((error) => {
-
-            console.log(
-              "No se pudo reproducir la música:",
-              error
-            );
-
-          });
-
-      }
-
-    }, 300);
-
-  };
-
-
-  // ===== CAMBIAR MÚSICA ===== //
-
-  const cambiarMusica = () => {
-
-    if (!datos.musica.activa) return;
-
-    if (!audioRef.current) return;
-
-    if (musica) {
-
-      audioRef.current.pause();
-
-      setMusica(false);
-
-    } else {
-
-      audioRef.current
-        .play()
-        .then(() => {
-
-          setMusica(true);
-
-        })
-        .catch((error) => {
-
-          console.log(
-            "No se pudo reproducir:",
-            error
-          );
-
-        });
-
-    }
-
-  };
-
-
-  // ===== INVITACIÓN NO ENCONTRADA ===== //
-
-  if (!datos) {
-    return <NotFound />;
   }
 
 
-  return (
+  // INVITACIÓN SENCILLA
 
-    <div
-      className="app"
-      style={{
+  if (datosSencillos) {
 
-        "--fondo-portada":
-          `url("${datos.recursos.fondos.portada}")`,
+    return (
+      <InvitacionSencilla
+        datos={datosSencillos}
+      />
+    );
 
-        "--fondo-countdown":
-          `url("${datos.recursos.fondos.countdown}")`,
-
-        "--fondo-familia":
-          `url("${datos.recursos.fondos.familia}")`,
-
-        "--color-principal":
-          datos.tema.principal,
-
-        "--color-principal-claro":
-          datos.tema.principalClaro,
-
-        "--color-oscuro":
-          datos.tema.oscuro,
-
-        "--color-acento":
-          datos.tema.acento,
-
-        "--color-fondo":
-          datos.tema.fondo,
-
-        "--color-texto":
-          datos.tema.texto,
-
-        "--color-blanco":
-          datos.tema.blanco,
-
-      }}
-    >
-
-      {/* ===== PORTADA ===== */}
-
-      {!abierta && (
-
-        <Portada
-          datos={datos}
-          abrirInvitacion={abrirInvitacion}
-        />
-
-      )}
+  }
 
 
-      {/* ===== INVITACIÓN ===== */}
+  // NO EXISTE
 
-      {abierta && (
-
-        <main className="invitacion">
-
-          {/* MÚSICA */}
-
-          {datos.musica.activa && (
-
-            <ReproductorMusica
-              audioRef={audioRef}
-              musica={musica}
-              progresoMusica={progresoMusica}
-              cambiarMusica={cambiarMusica}
-              titulo={datos.musica.titulo}
-              archivo={datos.musica.archivo}
-              loop={datos.musica.loop}
-            />
-
-          )}
-
-
-          {/* HERO */}
-
-          <Hero datos={datos} />
-
-
-          {/* MENSAJE */}
-
-          <Mensaje datos={datos} />
-
-
-          {/* CUENTA REGRESIVA */}
-
-          <Countdown
-            tiempo={tiempo}
-            datos={datos}
-          />
-
-
-          {/* EVENTO */}
-
-          <Evento datos={datos} />
-
-
-          {/* GALERÍA */}
-
-          <Galeria datos={datos} />
-
-
-          {/* FAMILIA */}
-
-          <Familia datos={datos} />
-
-
-          {/* REGALOS */}
-
-          <Regalos datos={datos} />
-
-
-          {/* CONFIRMACIÓN */}
-
-          <Confirmacion datos={datos} />
-
-
-          {/* FOOTER */}
-
-          <Footer datos={datos} />
-
-        </main>
-
-      )}
-
-    </div>
-
-  );
+  return <NotFound />;
 
 }
 
