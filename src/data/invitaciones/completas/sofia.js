@@ -100,7 +100,7 @@ const sofia = {
   evento: {
     fecha: "2026-10-24T19:00:00",
     hora: "7:00 PM",
-    lugar: "Zamna Salón de Eventos",
+    lugar: "Salón De Eventos Sociales Villa Fernanda",
     direccion: "Mérida, Yucatán",
   },
 
@@ -125,7 +125,7 @@ const sofia = {
     maps: {
       activa: true,
       texto: "Ver en Google Maps",
-      url: "https://maps.app.goo.gl/XguMpKnzMx5NnWY8",
+      url: "https://maps.app.goo.gl/zHLufHUiyFoS5rjg8",
     },
 
     regalos: {

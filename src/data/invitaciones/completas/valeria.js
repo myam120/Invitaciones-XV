@@ -3,7 +3,7 @@ const valeria = {
   // IDENTIFICACIÓN
   slug: "valeria",
   nombre: "Valeria",
-  fecha: "5 de septiembre de 2026",
+  fecha: "26 de septiembre de 2026",
 
   // SEO  
   seo: {
@@ -100,7 +100,7 @@ const valeria = {
   evento: {
     fecha: "2026-09-05T20:00:00",
     hora: "8:00 PM",
-    lugar: "Zamna Salón de Eventos",
+    lugar: "Salón De Eventos Sociales Villa Fernanda",
     direccion: "Mérida, Yucatán",
   },
 
@@ -125,7 +125,7 @@ const valeria = {
     maps: {
       activa: true,
       texto: "Ver en Google Maps",
-      url: "https://maps.app.goo.gl/XguMpKnzMx5NnWY8",
+      url: "https://maps.app.goo.gl/zHLufHUiyFoS5rjg8",
     },
 
     regalos: {
