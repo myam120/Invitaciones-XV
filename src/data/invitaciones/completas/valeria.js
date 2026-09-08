@@ -98,7 +98,7 @@ const valeria = {
   
   // EVENTO
   evento: {
-    fecha: "2026-09-05T20:00:00",
+    fecha: "2026-09-26T20:00:00",
     hora: "8:00 PM",
     lugar: "Salón De Eventos Sociales Villa Fernanda",
     direccion: "Mérida, Yucatán",
